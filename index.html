@@ -2,21 +2,30 @@
 <html lang="en">
 
     <head>
+
         <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Angular Tutorial</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link href="content/css/styles.css " rel="stylesheet " type="text/css " />
+        <!-- Angular Scripts -->
+        <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+
     </head>
 
     <body>
 
-        <!-- Javascript -->
+      <main ng-view>
+        <!-- When a user types /contact, dynamically inject the contact.html view -->
+        <!-- when a user types /about, dynamically inject the about.html view -->
+      </main>
 
-        <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      <!-- Javascript -->
 
-        <!-- End of Javascript -->
+      <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+      <!-- End of Javascript -->
 
     </body>
 
