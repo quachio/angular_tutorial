@@ -6,21 +6,24 @@
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Angular Tutorial: Lesson 8 modules</title>
+        <title>Angular Tutorial: Lesson 9 modules</title>
         <link href="content/css/styles.css " rel="stylesheet " type="text/css " />
 
         <!-- Angular Scripts -->
         <script type="text/javascript" src="app/lib/angular.min.js"></script>
+        <script type="text/javascript" src="app/app.js"></script>
 
     </head>
 
-    <body ng-init="ninjas=['yoshi', 'crystal', 'ryu', 'shawn']">
+    <body>
 
-      <input type="text" ng-model="favMeat" placeholder="enter your fav meat" />
-      <ul>
+      <div ng-controller="NinjaController">
+        <p>{{message}}</p>
+        <ul>
           <li ng-repeat="ninja in ninjas">{{ninja}}</li>
-      </ul>
-
+        </ul>
+      </div>
+      
     </body>
 
 </html>
