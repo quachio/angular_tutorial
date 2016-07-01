@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- <html lang="en" ng-app="myNinjaApp"> -->
+<html lang="en" ng-app="myNinjaApp">
+
+    <head>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Angular Tutorial: Lesson 13 ng-click</title>
+        <link href="content/css/styles.css" rel="stylesheet" type="text/css">
+
+        <!-- Angular Scripts -->
+        <script type="text/javascript" src="app/lib/angular.min.js"></script>
+        <script type="text/javascript" src="app/app.js"></script>
+
+    </head>
+
+    <body>
+        <header ng-include="'header.html'"></header>
+        <div class="content">
+            <div ng-controller="NinjaController">
+                <button ng-click="order = 'name'">Order by Name</button>
+                <button ng-click="order = 'belt'">Order by Belt</button>
+                <input type="text" ng-model="search" placeholder="Search for ninja">
+                <ul>
+                    <li ng-repeat="ninja in ninjas | orderBy: order | filter: search" ng-show="ninja.available">
+                        <!--
+                      <li ng-repeat="ninja in ninjas | orderBy: 'name' | filter: search" ng-hide="ninja.available">
+                        <li ng-repeat="ninja in ninjas | orderBy: 'name' | filter: search" ng-show="!ninja.available">
+                      -->
+                      <h3>{{ninja.name | lowercase}} - {{ninja.rate | currency: '£'}}</h3>
+                      <div class="remove" ng-click="removeNinja(ninja)">x</div>
+                      <span  class="belt" style="background: {{ninja.belt}}">{{ninja.belt}} belt</span>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </body>
+
+</html>
