@@ -1,13 +1,16 @@
 <div class="content">
     <div ng-controller="NinjaController">
-        <button ng-click="order = 'name'">Order by Name</button>
+        <button class="btn btn-primary" ng-click="order = 'name'">Order by Name
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+        </button>
         <button ng-click="order = 'belt'">Order by Belt</button>
+
         <input type="text" ng-model="search" placeholder="Search for ninja">
         <ul>
             <li ng-repeat="ninja in ninjas | orderBy: order | filter: search" ng-show="ninja.available">
-              <img ng-src="{{ninja.thumb}}" ng-show="ninja.thumb" alt="" style="margin: -12px 10px 0 0; float: left; width: 50px;"/>
+              <img class="img-circle" ng-src="{{ninja.thumb}}" ng-show="ninja.thumb" alt="" style="margin: -12px 10px 0 0; float: left; width: 50px;"/>
               <h3>{{ninja.name | lowercase}} - {{ninja.rate | currency: '£'}}</h3>
-              <div class="remove" ng-click="removeNinja(ninja)">x</div>
+              <div class="remove" ng-click="removeNinja(ninja)"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></div>
               <span  class="belt" style="background: {{ninja.belt}}">{{ninja.belt}} belt</span>
             </li>
         </ul>

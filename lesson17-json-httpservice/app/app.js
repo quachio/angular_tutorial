@@ -22,11 +22,17 @@ myNinjaApp.run(function () {
   console.log('run');
 });
 
-myNinjaApp.controller('NinjaController', ['$scope', function ($scope) {
+myNinjaApp.controller('NinjaController', ['$scope', '$http', function ($scope, $http) {
     console.log('myNinjaApp.controller');
 
+    $http.get('data/ninjas.json').success(function (data) {
+      $scope.ninjas = data;
+    });
+
     $scope.removeNinja = function (ninja) {
+      console.log(ninja);
       var removeNinja = $scope.ninjas.indexOf(ninja);
+      console.log('Removing ninja:' + $scope.ninjas[removeNinja].name);
       $scope.ninjas.splice(removeNinja, 1); // Start of and remove 1 element
     };
 
@@ -42,39 +48,5 @@ myNinjaApp.controller('NinjaController', ['$scope', function ($scope) {
       $scope.newninja.belt = '';
       $scope.newninja.rate = '';
     };
-
-    $scope.ninjas = [
-    {
-      name: 'Yoshi',
-      belt: 'green',
-      rate: 50,
-      available: true,
-      thumb: 'content/img/droctocat.png',
-    },
-    {
-      name: 'Cystal',
-      belt: 'Yellow',
-      rate: 30,
-      available: true,
-      thumb: 'content/img/droidtocat.png',
-
-    },
-    {
-      name: 'Shawn',
-      belt: 'black',
-      rate: 10,
-      available: true,
-      thumb: 'content/img/dunetocat.png',
-
-    },
-    {
-      name: 'Ryu',
-      belt: 'gold',
-      rate: 100,
-      available: true,
-      thumb: 'content/img/femalecodertocat.png',
-    },
-  ];
-
   },
 ]);
