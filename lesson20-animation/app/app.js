@@ -1,4 +1,4 @@
-var myNinjaApp = angular.module('myNinjaApp', ['ngRoute']); //[], this is where you at dependencies
+var myNinjaApp = angular.module('myNinjaApp', ['ngRoute', 'ngAnimate']);
 
 myNinjaApp.config(['$routeProvider', function ($routeProvider) {
   console.log('config');
