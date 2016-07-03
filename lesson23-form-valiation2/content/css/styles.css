@@ -191,11 +191,3 @@ input.ng-invalid.ng-touched {
 textarea.ng-invalid.ng-touched {
     border: 2px solid red;
 }
-
-
-/* select atrribute from the class */
-
-input[disabled="disabled"] {
-    opacity: 0.4;
-    cursor: not-allowed !important;
-}
